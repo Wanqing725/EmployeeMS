@@ -1,8 +1,10 @@
 package org.employeems.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -51,7 +53,8 @@ public class Employee {
     /**
      * 入职日期
      */
-    private LocalDateTime hireDate;
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private LocalDate hireDate;
 
     /**
      * 在职状态

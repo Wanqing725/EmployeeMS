@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.employeems.mapper.EmployeeMapper">
+    <insert id="insert" parameterType="org.employeems.entity.core.Employee">
+        INSERT INTO employee (
+            emp_no, name, gender, phone, email, position, hire_date,
+            status, department_id, create_time, update_time
+        ) VALUES (
+                     #{empNo}, #{name}, #{gender}, #{phone}, #{email}, #{position},
+                     #{hireDate}, #{status}, #{departmentId}, NOW(), NOW()
+                 )
+    </insert>
+    <select id="select" resultType="org.employeems.entity.core.Employee">
+        SELECT * FROM employee
+    </select>
+</mapper>
