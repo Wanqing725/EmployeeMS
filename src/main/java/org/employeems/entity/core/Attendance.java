@@ -1,9 +1,11 @@
 package org.employeems.entity.core;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,27 +25,29 @@ public class Attendance {
     /**
      * 打卡日期
      */
-    private LocalDateTime date;
+    private LocalDate date;
 
     /**
      * 上班时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime clockInTime;
 
     /**
      * 下班时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime clockOutTime;
 
     /**
      * 状态（0-正常，1-迟到，2-早退，3-缺勤）
      */
-    private Long status;
+    private Integer status;
 
     /**
      * 地理位置（经纬度）
      */
-    private Object location;
+    private String location;
 
     /**
      * 创建时间

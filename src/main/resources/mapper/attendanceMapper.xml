@@ -4,4 +4,38 @@
     <select id="selectAttendanceById">
         SELECT * FROM attendance WHERE id = #{id}
     </select>
+
+    <insert id="add" parameterType="org.employeems.entity.core.Attendance">
+        INSERT INTO attendance (
+        employee_id,
+        date,
+        clock_in_time,
+        clock_out_time,
+        status,
+        create_time,
+        update_time
+        <if test="location != null">
+            , location
+        </if>
+        ) VALUES (
+        #{employeeId},
+        #{date},
+        #{clockInTime},
+        #{clockOutTime},
+        #{status},
+        #{createTime},
+        #{updateTime}
+        <if test="location != null">
+            , #{location}
+        </if>
+        )
+    </insert>
+
+    <delete id="delete" parameterType="java.util.List">
+        DELETE FROM attendance
+        WHERE id IN
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
