@@ -1,5 +1,6 @@
 package org.employeems.controller.employee;
 
+import org.apache.commons.logging.Log;
 import org.employeems.common.constant.MessageConstant;
 import org.employeems.common.result.Result;
 import org.employeems.entity.core.Employee;
@@ -41,4 +42,23 @@ public class EmployeeController {
         return Result.success(employee);
     }
 
+    /**
+     * 修改员工信息
+     */
+    @PostMapping("/update")
+    public Result<String> update(@RequestBody Employee employee){
+        log.info("修改了员工信息",employee);
+        employeeService.update(employee);
+        return Result.success(MessageConstant.OPERATE_SUCCESS);
+    }
+
+    /**
+     * 根据员工工号删除员工
+     */
+    @PostMapping("/delete/{id}")
+    public Result<String> delete(@PathVariable Long id){
+        log.info("删除了员工：",id);
+        employeeService.delete(id);
+        return Result.success(MessageConstant.OPERATE_SUCCESS);
+    }
 }

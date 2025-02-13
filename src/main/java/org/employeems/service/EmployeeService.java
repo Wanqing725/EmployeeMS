@@ -16,4 +16,16 @@ public interface EmployeeService {
      * @return
      */
     List<Employee> select();
+
+    /**
+     * 修改员工信息
+     * @param employee
+     */
+    void update(Employee employee);
+
+    /**
+     * 根据id删除员工
+     * @param id
+     */
+    void delete(Long id);
 }

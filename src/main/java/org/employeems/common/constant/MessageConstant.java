@@ -8,5 +8,8 @@ public interface MessageConstant {
  * 描述词
  */
     String OPERATE_SUCCESS = "操作成功";
+    String EMPLOYEE_IS_NOT_EXISTENT = "员工不存在";
+    String EMPLOYEE_IS_EXISTENT = "员工已存在";
+    String ATTENDANCE_IS_EXISTENT = "该员工有考勤记录，无法删除";
 
 }

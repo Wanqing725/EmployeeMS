@@ -13,4 +13,30 @@
     <select id="select" resultType="org.employeems.entity.core.Employee">
         SELECT * FROM employee
     </select>
+    <update id="update">
+        UPDATE employee
+        <set>
+            <if test="empNo != null">emp_no = #{empNo},</if>
+            <if test="name != null">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="phone != null">phone = #{phone},</if>
+            <if test="email != null">email = #{email},</if>
+            <if test="position != null">position = #{position},</if>
+            <if test="hireDate != null">hire_date = #{hireDate},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="departmentId != null">department_id = #{departmentId},</if>
+        </set>
+        <where>
+            id = #{id}
+            <if test="departmentId != null">AND department_id = #{departmentId}</if>
+        </where>
+    </update>
+
+    <select id="selectByEmpNo" resultType="org.employeems.entity.core.Employee">
+        SELECT * FROM employee WHERE emp_no = #{empNo}
+    </select>
+
+    <delete id="delete" parameterType="Long">
+        DELETE FROM employee WHERE id = #{id}
+    </delete>
 </mapper>
