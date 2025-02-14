@@ -25,7 +25,7 @@ public class WebMvcConfiguration {
                 .groupName("员工相关接口")
                 .apiInfo(apiInfo)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("org.employeems.controller.employee.EmployeeController"))
+                .apis(RequestHandlerSelectors.basePackage("org.employeems.controller.core.EmployeeController"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;

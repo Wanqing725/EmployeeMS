@@ -1,6 +1,5 @@
-package org.employeems.controller.employee;
+package org.employeems.controller.core;
 
-import org.apache.commons.logging.Log;
 import org.employeems.common.constant.MessageConstant;
 import org.employeems.common.result.Result;
 import org.employeems.entity.core.Employee;

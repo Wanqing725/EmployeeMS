@@ -11,5 +11,6 @@ public interface MessageConstant {
     String EMPLOYEE_IS_NOT_EXISTENT = "员工不存在";
     String EMPLOYEE_IS_EXISTENT = "员工已存在";
     String ATTENDANCE_IS_EXISTENT = "该员工有考勤记录，无法删除";
+    String DEPARTMENT_IS_EXISTENT = "该部门已存在";
 
 }

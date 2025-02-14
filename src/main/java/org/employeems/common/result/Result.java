@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.employeems.common.constant.MessageConstant;
 
 import java.io.Serializable;
 
@@ -66,6 +67,7 @@ public class Result<T> implements Serializable {
         Result<T> result = new Result<T>();
         result.data = object;
         result.code = 1;
+        result.msg = MessageConstant.OPERATE_SUCCESS;
         return result;
     }
 

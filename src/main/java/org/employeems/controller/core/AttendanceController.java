@@ -1,4 +1,4 @@
-package org.employeems.controller.attendance;
+package org.employeems.controller.core;
 
 import org.employeems.common.constant.MessageConstant;
 import org.employeems.common.result.Result;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/attend")
-public class attendanceController {
+public class AttendanceController {
     @Autowired
     private AttendanceService attendanceService;
 
