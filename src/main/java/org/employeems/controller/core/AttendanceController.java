@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/attend")
+@RequestMapping("/core/attend")
 public class AttendanceController {
     @Autowired
     private AttendanceService attendanceService;

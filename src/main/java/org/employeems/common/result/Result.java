@@ -50,10 +50,11 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return
      */
-    public static <T> Result<T> success(String msg) {
+    public static <T> Result<T> success(String msg, T data) {
         Result<T> result = new Result<T>();
         result.code = 1;
         result.msg = msg;
+        result.data = data;
         return result;
     }
 

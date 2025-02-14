@@ -36,7 +36,7 @@ public class User {
     /**
      * 是否启用（0-禁用，1-启用）
      */
-    private Byte enabled;
+    private Integer enabled;
 
     /**
      * 创建时间

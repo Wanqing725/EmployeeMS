@@ -11,7 +11,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/emp")
+@RequestMapping("/core/emp")
 @RestController
 public class EmployeeController {
     private static final Logger log = LoggerFactory.getLogger(EmployeeController.class);
